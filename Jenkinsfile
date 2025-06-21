@@ -16,6 +16,8 @@ pipeline {
 
                 //Creates a Docker image of the maven build, this image can be used to make a docker container
                 bat "docker build -t simplecalculator ."
+                bat "docker tag simplecalculator braxtonjazz/simplecalculator"
+                bat "docker push braxtonjazz/simplecalculator"
             }
 
             post {
