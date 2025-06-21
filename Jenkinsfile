@@ -10,7 +10,7 @@ pipeline {
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', 'braxtonjazz-dockerhub') {
                         //Creates a Docker image of the maven build, this image can be used to make a docker container
-                        def appImage = docker.build("braxtonjazz/simplecalculator:${env.BUILD_NUMBER}")
+                        def appImage = docker.build("braxtonjazz/simplecalculator")
                         appImage.push()
                     }
                 }
