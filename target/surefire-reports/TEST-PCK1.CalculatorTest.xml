@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
-    <property name="sun.java.command" value="C:\Users\Braxt\AppData\Local\Temp\surefire16350944057397035733\surefirebooter-20250622125201895_3.jar C:\Users\Braxt\AppData\Local\Temp\surefire16350944057397035733 2025-06-22T12-52-01_810-jvmRun1 surefire-20250622125201895_1tmp surefire_0-20250622125201895_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Braxt\AppData\Local\Temp\surefire14770496805794761457\surefirebooter-20250622130512052_3.jar C:\Users\Braxt\AppData\Local\Temp\surefire14770496805794761457 2025-06-22T13-05-11_963-jvmRun1 surefire-20250622130512052_1tmp surefire_0-20250622130512052_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Braxt\GithubProjects\SimpleCalculator\target\test-classes;C:\Users\Braxt\GithubProjects\SimpleCalculator\target\classes;C:\Users\Braxt\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\Braxt\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Braxt\AppData\Local\Temp\surefire16350944057397035733\surefirebooter-20250622125201895_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Braxt\AppData\Local\Temp\surefire14770496805794761457\surefirebooter-20250622130512052_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23.0.1+11-39"/>
@@ -58,7 +58,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="testMultiplication" classname="PCK1.CalculatorTest" time="0.002"/>
+  <testcase name="testMultiplication" classname="PCK1.CalculatorTest" time="0.003"/>
   <testcase name="testAddition" classname="PCK1.CalculatorTest" time="0.0"/>
   <testcase name="testDivision" classname="PCK1.CalculatorTest" time="0.0"/>
   <testcase name="testSubraction" classname="PCK1.CalculatorTest" time="0.0"/>

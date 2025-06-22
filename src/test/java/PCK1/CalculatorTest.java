@@ -5,7 +5,7 @@ import org.junit.Test;
 
 public class CalculatorTest {
 	int testNumber1 = (int) (Math.random() * 1000) + 1;
-	int testNumber2 = 10;
+	int testNumber2 = (int) (Math.random() * 1000) + 1;
 	
     @Test
 	public void testAddition() {
