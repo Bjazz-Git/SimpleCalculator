@@ -6,19 +6,21 @@
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="${layout}"/>
         </Console>
-        <File name="LogFile" fileName="SimpleCalculator.log" append="false">
+           <File name="LogFile" fileName="SimpleCalculatorLogs.log" append="false">
             <PatternLayout>
-                <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
+                <Pattern>%d %p %c{1.} [%t] %m%n \n</Pattern>
             </PatternLayout>
+        </File>
+        <File name="FileAppender" fileName="SimpleCalculatorErrorLogs.log" append="false">
+            <LevelRangeFilter minLevel="ERROR" maxLevel="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            <XmlLayout complete="true"/>
         </File>
     </Appenders>
     <Loggers>
         <Logger name="SimpleCalculator" level="info" additivity="false">
             <AppenderRef ref="LogFile"/>
-            <AppenderRef ref="Console"/>
+            <AppenderRef ref="FileAppender"/>
+            <!-- <AppenderRef ref="Console"/> -->
         </Logger>
-        <Root level="error">
-            <AppenderRef ref="Console"/>
-        </Root>
     </Loggers>
 </Configuration>

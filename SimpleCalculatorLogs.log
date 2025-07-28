@@ -1,0 +1,18 @@
+2025-07-28 18:09:18,307 INFO SimpleCalculator [main] Asking user for first number...
+ 
+2025-07-28 18:09:19,862 INFO SimpleCalculator [main] Converting user input (10) to integer...
+ 
+2025-07-28 18:09:19,862 INFO SimpleCalculator [main] User first number converted successfully
+ 
+2025-07-28 18:09:19,862 INFO SimpleCalculator [main] Asking user for operation sign...
+ 
+2025-07-28 18:09:21,304 INFO SimpleCalculator [main] User inputted (/) as there operation sign
+ 
+2025-07-28 18:09:21,304 INFO SimpleCalculator [main] Asking user for second number...
+ 
+2025-07-28 18:09:21,887 INFO SimpleCalculator [main] Converting user input (0) to integer...
+ 
+2025-07-28 18:09:21,887 INFO SimpleCalculator [main] User second input converted successfully
+ 
+2025-07-28 18:09:21,887 ERROR SimpleCalculator [main] The operation 10 / 0 resulted in the error: / by zero
+ 

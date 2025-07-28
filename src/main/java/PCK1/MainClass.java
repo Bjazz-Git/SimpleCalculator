@@ -121,6 +121,7 @@ public class MainClass {
 				break;
 			}
 		}
+		System.out.println("Calculator Shutting Down...");
 	}
 	
 	//Method that handles addition

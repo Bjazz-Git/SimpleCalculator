@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Events xmlns="http://logging.apache.org/log4j/2.0/events">
+
+  <Event xmlns="http://logging.apache.org/log4j/2.0/events" timeMillis="1753740561887" thread="main" level="ERROR" loggerName="SimpleCalculator" endOfBatch="false" loggerFqcn="org.apache.logging.log4j.spi.AbstractLogger" threadId="1" threadPriority="5">
+    <Instant epochSecond="1753740561" nanoOfSecond="887000000"/>
+    <Message>The operation 10 / 0 resulted in the error: / by zero</Message>
+  </Event>
+</Events>
