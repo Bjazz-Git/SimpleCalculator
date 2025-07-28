@@ -94,7 +94,7 @@ public class MainClass {
 					result = divideNumber(number1, number2);
 				}catch(Exception ex){
 					logger.error("The operation " + number1 + " " + operation + " " + number2 + " resulted in the error: " + ex.getMessage());
-					break;
+					// break;
 				}
 			}
 			
