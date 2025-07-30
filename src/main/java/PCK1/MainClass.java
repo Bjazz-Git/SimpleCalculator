@@ -30,7 +30,7 @@ public class MainClass {
 				logger.info("User first number converted successfully");
 			}
 			catch(Exception ex){
-				logger.warn("Converting " + tempValue + " to integer caused the error: " + ex.getMessage());
+				logger.error("Converting " + tempValue + " to integer caused the error: " + ex.getMessage());
 				System.out.println("Error, try again");
 				continue;
 			}
@@ -53,12 +53,12 @@ public class MainClass {
 				logger.info("User second input converted successfully");
 			}
 			catch(Exception ex){
-				logger.warn("Converting " + tempValue + " to integer caused the error: " + ex.getMessage());
+				logger.error("Converting " + tempValue + " to integer caused the error: " + ex.getMessage());
 				System.out.println("Error, try again");
 				continue;
 			}
 		
-			//Operator is plus
+			//Operator is addition
 			if(operation.equals("+")) {
 				try{
 					result = addNumber(number1, number2);
@@ -68,7 +68,7 @@ public class MainClass {
 				}
 			}
 		
-			//Operator is minus
+			//Operator is subtraction
 			else if(operation.equals("-")) {
 				try{
 					result = subtractNumber(number1, number2);
@@ -78,7 +78,7 @@ public class MainClass {
 				}
 			}
 		
-			//Operator is times sign
+			//Operator is multiplication
 			else if(operation.equals("*")) {
 				try{
 					result = multiplyNumber(number1, number2);
@@ -88,13 +88,14 @@ public class MainClass {
 				}
 			}
 		
-			//Operator is division sign
+			//Operator is division
 			else if(operation.equals("/")) {
 				try{
 					result = divideNumber(number1, number2);
 				}catch(Exception ex){
 					logger.error("The operation " + number1 + " " + operation + " " + number2 + " resulted in the error: " + ex.getMessage());
-					// break;
+					System.out.println("Error! Don't divide by 0. Restarting...");
+					continue;
 				}
 			}
 			
@@ -106,6 +107,13 @@ public class MainClass {
 			}
 			
 			//Operation result
+			//If precision error occurred 
+			if(hasPrecisionErrors(number1, operation, number2, result)){
+				logger.error("A precision error occurred when doing the operation " + number1 + " " +  operation + " " + number2 +  " = " + result);
+				System.out.println("There was an error completing the operation. Restarting...");
+				continue;
+			}
+
 			System.out.println("The result of the operation is: " + result);
 			logger.info("Operation completed successfully. The result of the operation was " + result);
 			
@@ -149,5 +157,54 @@ public class MainClass {
 	public static int divideNumber(int number1, int number2) {
 		int result = number1 / number2;
 		return result;
+	}
+
+	public static boolean hasPrecisionErrors(int number1, String operation, int number2, int result){
+			boolean precisionError = false;
+			switch(operation){
+				case "+":
+				    if(number1 > 0 && number2 > 0 && result <= 0){
+						precisionError = true;
+				    }
+					else if(number1 < 0 && number2 < 0 && result > 0){
+						precisionError = true;
+					}
+					break;
+				case "-":
+				    if(number1 > 0 && number2 < 0 && result <= 0){
+						precisionError = true;
+				    }    
+				    else if(number1 < 0 && number2 > 0 && result >= 0){
+						precisionError = true;
+				    }
+					else{
+						if(number1 < 0){
+							number1 = -(number1);
+						}
+						if (number2 < 0) {
+							number2 = -(number2);
+						}
+						if(number1 != number2 && result == 0){
+							precisionError = true;
+						}
+					}
+					break;
+				case "*":
+				    if(number1 > 0 && number2 > 0 && result < number1 || result < number2){
+						precisionError = true;
+				    }
+					else if(number1 > 0 && number2 < 0 && result > number2){
+						precisionError = true;
+					}
+					else if(number1 < 0 && number2 > 0 && result > number1){
+						precisionError = true;
+					}
+					else if(number1 < 0 && number2 < 0 && result < -(number1) || result < -(number2)){
+						precisionError = true;
+					}
+					break;	
+			}
+
+			return precisionError;
 	}
 }
