@@ -18,6 +18,22 @@
 				</archive>
 				</configuration>
 	</plugin>
+    <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>3.0.0</version>
+            <configuration>
+                <mainClass>PCK1.MainClass</mainClass>
+                <arguments>
+                    <argument>-javaagent:dd-java-agent.jar</argument>
+                    <argument>-Ddd.profiling.enabled=true</argument>
+                    <argument>-Ddd.logs.injection=true</argument>
+                    <argument>-Ddd.service=SimpleCalculator</argument>
+                    <argument>-Ddd.env=calculator_env</argument>
+                    <argument>-Ddd.version=1.0</argument>
+                </arguments>
+            </configuration>
+        </plugin>
   </plugins>
   </build>
   

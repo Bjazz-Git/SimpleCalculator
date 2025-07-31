@@ -42,7 +42,7 @@ public class CalculatorTest {
 	}
 
 	@Test
-	public void testGetPrecisionErrors(){
+	public void testHasOverflowErrors(){
 		int testNumber3 = (int) (Math.random() * 2147483647) + 1;
 		int testNumber4 = (int) (Math.random() * 2147483647) + 1;
 		int result = 0;
@@ -98,6 +98,6 @@ public class CalculatorTest {
 				result = MainClass.multiplyNumber(testNumber3, testNumber4);
 				break;
 		}
-		assertTrue(MainClass.hasPrecisionErrors(testNumber3, operationSign, testNumber4, result));
+		assertTrue(MainClass.hasOverflowErrors(testNumber3, operationSign, testNumber4, result));
 	}
 }

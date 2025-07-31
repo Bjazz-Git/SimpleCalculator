@@ -108,7 +108,7 @@ public class MainClass {
 			
 			//Operation result
 			//If precision error occurred 
-			if(hasPrecisionErrors(number1, operation, number2, result)){
+			if(hasOverflowErrors(number1, operation, number2, result)){
 				logger.error("A precision error occurred when doing the operation " + number1 + " " +  operation + " " + number2 +  " = " + result);
 				System.out.println("There was an error completing the operation. Restarting...");
 				continue;
@@ -159,7 +159,7 @@ public class MainClass {
 		return result;
 	}
 
-	public static boolean hasPrecisionErrors(int number1, String operation, int number2, int result){
+	public static boolean hasOverflowErrors(int number1, String operation, int number2, int result){
 			boolean precisionError = false;
 			switch(operation){
 				case "+":

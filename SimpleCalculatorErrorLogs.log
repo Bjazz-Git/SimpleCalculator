@@ -1,3 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Events xmlns="http://logging.apache.org/log4j/2.0/events">
+
+  <Event xmlns="http://logging.apache.org/log4j/2.0/events" timeMillis="1753990860340" thread="PCK1.MainClass.main()" level="ERROR" loggerName="SimpleCalculator" endOfBatch="false" loggerFqcn="org.apache.logging.log4j.spi.AbstractLogger" threadId="34" threadPriority="5">
+    <Instant epochSecond="1753990860" nanoOfSecond="340607700"/>
+    <Message>A precision error occurred when doing the operation 2147483647 * 2 = -2</Message>
+  </Event>
+
+  <Event xmlns="http://logging.apache.org/log4j/2.0/events" timeMillis="1753990867405" thread="PCK1.MainClass.main()" level="ERROR" loggerName="SimpleCalculator" endOfBatch="false" loggerFqcn="org.apache.logging.log4j.spi.AbstractLogger" threadId="34" threadPriority="5">
+    <Instant epochSecond="1753990867" nanoOfSecond="405646300"/>
+    <Message>A precision error occurred when doing the operation 2147483647 + 5 = -2147483644</Message>
+  </Event>
+
+  <Event xmlns="http://logging.apache.org/log4j/2.0/events" timeMillis="1753990877705" thread="PCK1.MainClass.main()" level="ERROR" loggerName="SimpleCalculator" endOfBatch="false" loggerFqcn="org.apache.logging.log4j.spi.AbstractLogger" threadId="34" threadPriority="5">
+    <Instant epochSecond="1753990877" nanoOfSecond="705942700"/>
+    <Message>A precision error occurred when doing the operation 2147483647 - -1 = -2147483648</Message>
+  </Event>
 </Events>
