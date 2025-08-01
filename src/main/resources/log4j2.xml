@@ -13,7 +13,8 @@
         </File>
         <File name="FileAppender" fileName="SimpleCalculatorErrorLogs.log" append="false">
             <LevelRangeFilter minLevel="ERROR" maxLevel="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
-            <XmlLayout complete="true"/>
+            <JSONLayout includeTimeMillis="true"/>
+            <!-- <XmlLayout complete="true"/> -->
         </File>
     </Appenders>
     <Loggers>
