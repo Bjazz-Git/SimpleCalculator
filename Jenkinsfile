@@ -24,7 +24,6 @@ pipeline {
                 allowMissing: false,
                 alwaysLinkToLastBuild: true,
                 keepAll: true,
-                reportDir: 'jmeter-reports',
                 reportFiles: 'index.html',
                 reportName: 'Jmeter Results'
               ])
