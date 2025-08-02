@@ -22,7 +22,9 @@ pipeline {
         }
         stage('Publish Jmeter Report'){
           steps{
-            performanceReport parsers: [[includeFailedThreshold: true, jmeter: 'SimpleCalcTestResults.jtl']]
+            perfReport(
+              sourceDataFiles: 'SimpleCalcTestResults.jtl'
+            )
               // bat 'C:/Users/Braxt/Tools/Jmeter/apache-jmeter-5.6.3/bin/jmeter.bat -g SimpleCalcTestResults.jtl -o "jmeter-reports"'
               // publishHTML(target: [
               //   allowMissing: false,
