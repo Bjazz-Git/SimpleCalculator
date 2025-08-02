@@ -8,6 +8,7 @@ pipeline {
             // git branch: 'main', url: 'https://github.com/Bjazz-Git/SimpleCalculator.git'
 
               // Executes the command mvn clean package, which creates/recreates a new maven build and tests the Junit code
+              //Tests the project to ensure that it works
               bat "mvn clean verify"
 
           }
@@ -22,18 +23,10 @@ pipeline {
         }
         stage('Publish Jmeter Report'){
           steps{
+            //https://www.jenkins.io/doc/pipeline/steps/performance/
             perfReport(
               sourceDataFiles: 'SimpleCalcTestResults.jtl'
             )
-              // bat 'C:/Users/Braxt/Tools/Jmeter/apache-jmeter-5.6.3/bin/jmeter.bat -g SimpleCalcTestResults.jtl -o "jmeter-reports"'
-              // publishHTML(target: [
-              //   allowMissing: false,
-              //   alwaysLinkToLastBuild: true,
-              //   reportDir: 'jmeter-reports',
-              //   keepAll: true,
-              //   reportFiles: 'index.html',
-              //   reportName: 'Jmeter Results'
-              // ])
           }
         }
         stage('Approve Docker Push'){
