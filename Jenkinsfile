@@ -1,13 +1,6 @@
 pipeline {
     agent any
     stages {
-        //Test Project's Junit Code
-        stage('Run Jmeter-junit tests'){
-          steps{
-              //Goes to local Jmeter Installation and executes bat. Uses jmx file located in github and creates a jtl file based on the jmeter test results.
-              bat 'C:/Users/Braxt/Tools/Jmeter/apache-jmeter-5.6.3/bin/jmeter.bat -n -t "SimpleCalculator.jmx" -l SimpleCalcTestResults.jtl -o "jmeter-reports"'
-          }
-        }
         //Build and verify maven build
         stage('Build Maven Project'){
           steps{
@@ -16,6 +9,15 @@ pipeline {
               // Executes the command mvn clean package, which creates/recreates a new maven build and tests the Junit code
               bat "mvn clean verify"
 
+          }
+        }
+
+        //Test Project's Junit Code
+        stage('Run Jmeter-junit tests'){
+          steps{
+              //Goes to local Jmeter Installation and executes bat. Uses jmx file located in github and creates a jtl file based on the jmeter test results.
+              bat 'C:/Users/Braxt/Tools/Jmeter/apache-jmeter-5.6.3/bin/jmeter.bat -n -t "SimpleCalculator.jmx" -l SimpleCalcTestResults.jtl'
+              bat jmeter -g "SimpleCalculator.jmx" -o "jmeter-reports"
           }
         }
         stage('Publish Jmeter Report'){
