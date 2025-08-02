@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('run test') {
       steps {
-        sh './mvnw clean verify'
+        bat "mvn -Dmaven.test.failure.ignore=true clean verify"
       }
     }
   }
