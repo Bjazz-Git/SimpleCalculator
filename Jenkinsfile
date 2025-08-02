@@ -1,15 +1,20 @@
 pipeline {
-  agent { label 'linux' }
-  stages {
-    stage('run test') {
-      steps {
-        sh './mvnw clean verify'
-      }
+    agent any
+    stages {
+        stage('Build and Push Docker Image') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Bjazz-Git/SimpleCalculator.git'
+
+                // Executes the command mvn clean package, which creates/recreates a new maven build and tests the Junit code
+                bat "mvn clean package"
+                script {
+                    docker.withRegistry('https://index.docker.io/v1/', 'braxtonjazz-dockerhub') {
+                        //Creates a Docker image of the maven build, this image can be used to make a docker container
+                        def appImage = docker.build("braxtonjazz/simplecalculator")
+                        appImage.push()
+                    }
+                }
+            }
+        }
     }
-  }
-  post {
-    success {
-      archiveArtifacts artifacts: 'target/jmeter/**/*.log, target/jmeter/**/*.csv', followSymlinks: false
-    }
-  }
 }
