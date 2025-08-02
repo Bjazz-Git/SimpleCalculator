@@ -14,9 +14,8 @@ pipeline {
                 }
                 
                 def imageToDeploy = "braxtonjazz/simpleCalculator:${previousTag}"
-                //docker.build(imageToDeploy)
-                
                 echo "The image that is going to deploy is: ${imageToDeploy}"
+                docker.build(imageToDeploy)
                 }
             }
         }
