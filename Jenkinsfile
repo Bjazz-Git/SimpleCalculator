@@ -18,6 +18,18 @@ pipeline {
 
           }
         }
+        stage('Publish Jmeter Report'){
+          steps{
+              publishHTML(target: [
+                allowMissing: false,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'jmeter-reports',
+                reportFiles: 'index.html',
+                reportName: 'Jmeter Results'
+              ])
+          }
+        }
         stage('Approve Docker Push'){
           steps{
             input(
