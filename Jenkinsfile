@@ -21,7 +21,7 @@ pipeline {
         stage('Approve Docker Push'){
           steps{
             input(
-              id: 'ApprovePush'
+              id: 'ApprovePush',
               message: 'Push Project to Docker?'
               // ok: 'Create and Push Docker Image'
             )
