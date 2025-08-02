@@ -5,31 +5,30 @@
   <version>0.0.1-SNAPSHOT</version>
 
   <properties>
+    <maven-jar-plugin.version>3.3.0</maven-jar-plugin.version>
     <jmeter-maven-plugin.version>3.8.0</jmeter-maven-plugin.version>
+    <jmeter.version>5.6.3</jmeter.version>
   </properties>
 
- <build>
+  <build>
     <plugins>
-    <plugin>
+      <plugin>
         <groupId>com.lazerycode.jmeter</groupId>
         <artifactId>jmeter-maven-plugin</artifactId>
         <version>${jmeter-maven-plugin.version}</version>
         <executions>
-          <!-- Generate JMeter configuration -->
           <execution>
             <id>configuration</id>
             <goals>
               <goal>configure</goal>
             </goals>
           </execution>
-          <!-- Run JMeter tests -->
           <execution>
             <id>jmeter-tests</id>
             <goals>
               <goal>jmeter</goal>
             </goals>
           </execution>
-          <!-- Fail build on errors in test -->
           <execution>
             <id>jmeter-check-results</id>
             <goals>
@@ -37,48 +36,61 @@
             </goals>
           </execution>
         </executions>
+        <configuration>
+          <jmeterVersion>${jmeter.version}</jmeterVersion>
+          
+          <testFilesDirectory>SimpleCalculator/src/test/jmeter</testFilesDirectory>
+          
+          <testFilesIncluded>
+              <jMeterTestFile>SimpleCalculator.jmx</jMeterTestFile>
+          </testFilesIncluded>
+
+          <generateReports>true</generateReports>
+
+          <failBuildOnFailure>true</failBuildOnFailure>
+          <resultFailureDetails>
+          <failureRate>1.0</failureRate> </resultFailureDetails>
+        </configuration>
       </plugin>
-	<plugin>
-		<groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-jar-plugin</artifactId>
-            <version>3.3.0</version> <configuration>
-                <archive>
-                    <manifest>
-                        <addClasspath>true</addClasspath>
-                        <mainClass>PCK1.MainClass</mainClass> 
-					</manifest>
-				</archive>
-				</configuration>
-	</plugin>
-    <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-jar-plugin</artifactId>
-            <version>3.3.0</version>
-            <executions>
-                <execution>
-                    <goals>
-                        <goal>test-jar</goal>
-                    </goals>
-                </execution>
-            </executions>
-    </plugin>
-    <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>exec-maven-plugin</artifactId>
-            <version>3.0.0</version>
-            <configuration>
-                <mainClass>PCK1.MainClass</mainClass>
-                <arguments>
-                    <argument>-javaagent:dd-java-agent.jar</argument>
-                    <argument>-Ddd.profiling.enabled=true</argument>
-                    <argument>-Ddd.logs.injection=true</argument>
-                    <argument>-Ddd.service=SimpleCalculator</argument>
-                    <argument>-Ddd.env=calculator_env</argument>
-                    <argument>-Ddd.version=1.0</argument>
-                </arguments>
-            </configuration>
-        </plugin>
-  </plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>${maven-jar-plugin.version}</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>PCK1.MainClass</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>test-jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.0.0</version>
+        <configuration>
+          <mainClass>PCK1.MainClass</mainClass>
+          <arguments>
+            <argument>-javaagent:dd-java-agent.jar</argument>
+            <argument>-Ddd.profiling.enabled=true</argument>
+            <argument>-Ddd.logs.injection=true</argument>
+            <argument>-Ddd.service=SimpleCalculator</argument>
+            <argument>-Ddd.env=calculator_env</argument>
+            <argument>-Ddd.version=1.0</argument>
+          </arguments>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
   
   <dependencies>
