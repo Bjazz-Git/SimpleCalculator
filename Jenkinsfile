@@ -12,7 +12,7 @@ pipeline {
                 //Build and verify maven build
         stage('Build Maven Project'){
           steps{
-            git branch: 'main', url: 'https://github.com/Bjazz-Git/SimpleCalculator.git'
+            // git branch: 'main', url: 'https://github.com/Bjazz-Git/SimpleCalculator.git'
 
               // Executes the command mvn clean package, which creates/recreates a new maven build and tests the Junit code
               bat "mvn clean verify"
