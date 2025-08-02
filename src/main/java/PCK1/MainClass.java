@@ -207,4 +207,5 @@ public class MainClass {
 
 			return precisionError;
 	}
+
 }

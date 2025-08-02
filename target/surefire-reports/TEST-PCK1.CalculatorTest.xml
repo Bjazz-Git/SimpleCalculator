@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="PCK1.CalculatorTest" time="0.356" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="PCK1.CalculatorTest" time="0.431" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="23"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="US"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-23\bin"/>
-    <property name="sun.java.command" value="C:\Users\Braxt\AppData\Local\Temp\surefire6316753125602058930\surefirebooter-20250801205325569_3.jar C:\Users\Braxt\AppData\Local\Temp\surefire6316753125602058930 2025-08-01T20-53-25_508-jvmRun1 surefire-20250801205325569_1tmp surefire_0-20250801205325569_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Braxt\AppData\Local\Temp\surefire8135702442437780426\surefirebooter-20250802012338476_3.jar C:\Users\Braxt\AppData\Local\Temp\surefire8135702442437780426 2025-08-02T01-23-38_403-jvmRun1 surefire-20250802012338476_1tmp surefire_0-20250802012338476_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\Braxt\GithubProjects\SimpleCalculator\target\test-classes;C:\Users\Braxt\GithubProjects\SimpleCalculator\target\classes;C:\Users\Braxt\.m2\repository\junit\junit\4.12\junit-4.12.jar;C:\Users\Braxt\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;C:\Users\Braxt\.m2\repository\com\jgoodies\jgoodies-forms\1.6.0\jgoodies-forms-1.6.0.jar;C:\Users\Braxt\.m2\repository\com\jgoodies\jgoodies-common\1.4.0\jgoodies-common-1.4.0.jar;C:\Users\Braxt\.m2\repository\org\apache\logging\log4j\log4j-core\2.24.3\log4j-core-2.24.3.jar;C:\Users\Braxt\.m2\repository\org\apache\logging\log4j\log4j-api\2.24.3\log4j-api-2.24.3.jar;C:\Users\Braxt\.m2\repository\org\apache\logging\log4j\log4j-jpl\2.24.3\log4j-jpl-2.24.3.jar;C:\Users\Braxt\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.17.2\jackson-core-2.17.2.jar;C:\Users\Braxt\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.17.2\jackson-databind-2.17.2.jar;C:\Users\Braxt\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.17.2\jackson-annotations-2.17.2.jar;C:\Users\Braxt\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-xml\2.17.2\jackson-dataformat-xml-2.17.2.jar;C:\Users\Braxt\.m2\repository\org\codehaus\woodstox\stax2-api\4.2.2\stax2-api-4.2.2.jar;C:\Users\Braxt\.m2\repository\com\fasterxml\woodstox\woodstox-core\6.7.0\woodstox-core-6.7.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Braxt\AppData\Local\Temp\surefire6316753125602058930\surefirebooter-20250801205325569_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Braxt\AppData\Local\Temp\surefire8135702442437780426\surefirebooter-20250802012338476_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="23.0.1+11-39"/>
@@ -58,13 +58,13 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="67.0"/>
   </properties>
-  <testcase name="testMultiplication" classname="PCK1.CalculatorTest" time="0.328">
-    <system-out><![CDATA[2025-08-02T00:53:26.121848600Z main WARN No Root logger was configured, creating default ERROR-level Root logger with Console appender
-2025-08-02T00:53:26.129739Z main INFO Starting configuration XmlConfiguration[location=C:\Users\Braxt\GithubProjects\SimpleCalculator\target\classes\log4j2.xml, lastModified=2025-07-31T23:49:00.669Z]...
-2025-08-02T00:53:26.129739Z main INFO Start watching for changes to C:\Users\Braxt\GithubProjects\SimpleCalculator\target\classes\log4j2.xml every 0 seconds
-2025-08-02T00:53:26.129739Z main INFO Configuration XmlConfiguration[location=C:\Users\Braxt\GithubProjects\SimpleCalculator\target\classes\log4j2.xml, lastModified=2025-07-31T23:49:00.669Z] started.
-2025-08-02T00:53:26.130739400Z main INFO Stopping configuration org.apache.logging.log4j.core.config.DefaultConfiguration@7b2bbc3...
-2025-08-02T00:53:26.130739400Z main INFO Configuration org.apache.logging.log4j.core.config.DefaultConfiguration@7b2bbc3 stopped.
+  <testcase name="testMultiplication" classname="PCK1.CalculatorTest" time="0.399">
+    <system-out><![CDATA[2025-08-02T05:23:39.125434500Z main WARN No Root logger was configured, creating default ERROR-level Root logger with Console appender
+2025-08-02T05:23:39.131838400Z main INFO Starting configuration XmlConfiguration[location=C:\Users\Braxt\GithubProjects\SimpleCalculator\target\classes\log4j2.xml, lastModified=2025-07-31T23:49:00.669Z]...
+2025-08-02T05:23:39.132835600Z main INFO Start watching for changes to C:\Users\Braxt\GithubProjects\SimpleCalculator\target\classes\log4j2.xml every 0 seconds
+2025-08-02T05:23:39.132835600Z main INFO Configuration XmlConfiguration[location=C:\Users\Braxt\GithubProjects\SimpleCalculator\target\classes\log4j2.xml, lastModified=2025-07-31T23:49:00.669Z] started.
+2025-08-02T05:23:39.133835500Z main INFO Stopping configuration org.apache.logging.log4j.core.config.DefaultConfiguration@7b2bbc3...
+2025-08-02T05:23:39.133835500Z main INFO Configuration org.apache.logging.log4j.core.config.DefaultConfiguration@7b2bbc3 stopped.
 ]]></system-out>
   </testcase>
   <testcase name="testAddition" classname="PCK1.CalculatorTest" time="0.0"/>
