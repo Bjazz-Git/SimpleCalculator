@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    stages{
+        stage('Rollback image'){
+            steps{
+                script{
+                def previousImage = currentBuild.previousSuccessfulBuild
+                if(previousImage){
+                    def previousTag = previousImage.number.toString
+                }
+                
+                def imageToDeploy = "braxtonjazz/simpleCalculator:${tagToDeploy}"
+                //docker.build(imageToDeploy)
+                
+                echo imageToDeploy
+                }
+            }
+        }
+    }
+}
