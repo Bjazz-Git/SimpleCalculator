@@ -42,7 +42,6 @@ pipeline {
             steps {
                 // git branch: 'main', url: 'https://github.com/Bjazz-Git/SimpleCalculator.git'
                 script {
-                    currentBuild.result
                     docker.withRegistry('https://index.docker.io/v1/', 'braxtonjazz-dockerhub') {
                     //Creates a Docker image of the maven build, this image can be used to make a docker container
                     def appImage = docker.build("braxtonjazz/simplecalculator:${env.BUILD_NUMBER}")
@@ -50,6 +49,12 @@ pipeline {
                     }
                 }
             }
+        }
+
+        stage('Test'){
+          steps{
+            echo currentBuild.result
+          }
         }
      } 
 }
