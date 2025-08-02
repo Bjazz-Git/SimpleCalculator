@@ -5,7 +5,7 @@ pipeline {
         stage('Run Jmeter-junit tests'){
           steps{
               //Goes to local Jmeter Installation and executes bat. Uses jmx file located in github and creates a jtl file based on the jmeter test results.
-              bat 'C:/Users/Braxt/Tools/Jmeter/apache-jmeter-5.6.3/bin/jmeter.bat -n -t "SimpleCalculator.jmx" -l SimpleCalcTestResults.jtl' -o "jmeter-reports"
+              bat 'C:/Users/Braxt/Tools/Jmeter/apache-jmeter-5.6.3/bin/jmeter.bat -n -t "SimpleCalculator.jmx" -l SimpleCalcTestResults.jtl -o "jmeter-reports"'
           }
         }
         //Build and verify maven build
