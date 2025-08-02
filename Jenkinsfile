@@ -22,15 +22,16 @@ pipeline {
         }
         stage('Publish Jmeter Report'){
           steps{
-              bat 'C:/Users/Braxt/Tools/Jmeter/apache-jmeter-5.6.3/bin/jmeter.bat -g SimpleCalcTestResults.jtl -o "jmeter-reports"'
-              publishHTML(target: [
-                allowMissing: false,
-                alwaysLinkToLastBuild: true,
-                reportDir: 'jmeter-reports',
-                keepAll: true,
-                reportFiles: 'index.html',
-                reportName: 'Jmeter Results'
-              ])
+            performanceReport parsers: [[includeFailedThreshold: true, jmeter: 'SimpleCalcTestResults.jtl']]
+              // bat 'C:/Users/Braxt/Tools/Jmeter/apache-jmeter-5.6.3/bin/jmeter.bat -g SimpleCalcTestResults.jtl -o "jmeter-reports"'
+              // publishHTML(target: [
+              //   allowMissing: false,
+              //   alwaysLinkToLastBuild: true,
+              //   reportDir: 'jmeter-reports',
+              //   keepAll: true,
+              //   reportFiles: 'index.html',
+              //   reportName: 'Jmeter Results'
+              // ])
           }
         }
         stage('Approve Docker Push'){
