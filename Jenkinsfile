@@ -40,6 +40,7 @@ pipeline {
         } 
         stage('Create and Push Docker Image') {
             steps {
+              currentBuild.result
                 // git branch: 'main', url: 'https://github.com/Bjazz-Git/SimpleCalculator.git'
                 script {
                     docker.withRegistry('https://index.docker.io/v1/', 'braxtonjazz-dockerhub') {
