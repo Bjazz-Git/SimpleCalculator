@@ -13,7 +13,7 @@ pipeline {
                     error "No previous build"
                 }
                 
-                def imageToDeploy = "braxtonjazz/simpleCalculator:${previousTag}"
+                def imageToDeploy = "braxtonjazz/simplecalculator:${previousTag}"
                 echo "The image that is going to deploy is: ${imageToDeploy}"
                 docker.build(imageToDeploy)
                 }
