@@ -23,7 +23,7 @@ pipeline {
               publishHTML(target: [
                 allowMissing: false,
                 alwaysLinkToLastBuild: true,
-                reportDir 'jmeter-reports',
+                reportDir: 'jmeter-reports',
                 keepAll: true,
                 reportFiles: 'index.html',
                 reportName: 'Jmeter Results'
