@@ -5,14 +5,18 @@ pipeline {
             steps{
                 script{
                 def previousImage = currentBuild.previousSuccessfulBuild
+                def previousTag = ''
                 if(previousImage){
-                    def previousTag = previousImage.number.toString
+                    previousTag = previousImage.number.toString()
+                }
+                else{
+                    error "No previous build"
                 }
                 
-                def imageToDeploy = "braxtonjazz/simpleCalculator:${tagToDeploy}"
+                def imageToDeploy = "braxtonjazz/simpleCalculator:${previousTag}"
                 //docker.build(imageToDeploy)
                 
-                echo imageToDeploy
+                echo "The image that is going to deploy is: ${imageToDeploy}"
                 }
             }
         }
