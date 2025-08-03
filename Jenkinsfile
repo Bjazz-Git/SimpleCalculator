@@ -7,10 +7,20 @@ pipeline {
           steps{
             // git branch: 'main', url: 'https://github.com/Bjazz-Git/SimpleCalculator.git'
 
-              // Executes the command mvn clean package, which creates/recreates a new maven build and tests the Junit code
-              //Tests the project to ensure that it works
-              bat "mvn clean verify"
+                // Executes the command mvn clean package, which creates/recreates a new maven build and tests the Junit code
+                //Tests the project to ensure that it works
+                bat "mvn clean verify"
+          }
+        }
 
+        stage('Move Jar files'){
+          steps{
+            script{
+                def jarLocation = "C:\\Users\\Braxt\\Tools\\Jmeter\\apache-jmeter-5.6.3\\lib\\junit"
+                bat "del \"${jarLocation}\\*.jar\""
+                bat "copy \"target\\calculatorProject-0.0.1-SNAPSHOT-tests.jar\" \"${jarLocation}\""
+                bat "copy \"target\\calculatorProject-0.0.1-SNAPSHOT.jar\" \"${jarLocation}\""
+            }
           }
         }
 
