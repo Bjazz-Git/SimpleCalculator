@@ -16,11 +16,8 @@ pipeline {
         stage('Move Jar files'){
           steps{
             script{
-                // def simplecalculatorJar = "target/calculatorProject-0.0.1-SNAPSHOT.jar"
-                // def simplecalculatorTestJar = "target/calculatorProject-0.0.1-SNAPSHOT-tests.jar"
-                // // def destinatinoDirectory = "C:/Users/Braxt/Tools/Jmeter/apache-jmeter-5.6.3/lib/junit"
-                // def destinationDirectory = "C:\Users\Braxt\Tools\Jmeter\Test"
-                // bat "copy \"${simplecalculatorJar}\" \"${destinationDirectory}\""
+                bat "del \"C:\\Users\\Braxt\\Tools\\Jmeter\\Test\\*.jar\""
+                bat "copy \"target\\calculatorProject-0.0.1-SNAPSHOT-tests.jar\" \"C:\\Users\\Braxt\\Tools\\Jmeter\\Test\""
                 bat "copy \"target\\calculatorProject-0.0.1-SNAPSHOT.jar\" \"C:\\Users\\Braxt\\Tools\\Jmeter\\Test\""
             }
           }
