@@ -18,23 +18,13 @@ pipeline {
                 script{
                     def containerName =" simplecalculator"
                     
-                    // try{
-                    //     bat "docker stop ${containerName}"
-                    //     bat "docker rm ${containerName}"
-                    // }catch(Exception ex){
-                    //     echo "container ${containerName} isn't running"
-                    // }
-                    
                     def previousImage = "braxtonjazz/simplecalculator:${imageNumber}"
-                    // previousImage.pull()
                     bat "docker pull ${previousImage}"
-                    // bat "docker stop ${containerName}"
                     bat "docker tag ${previousImage} braxtonjazz/simplecalculator:${env.BUILD_NUMBER}"
-                    //def container = docker.build("braxtonjazz/simplecalculator:${env.BUILD_NUMBER}")
                     bat "docker push braxtonjazz/simplecalculator:${env.BUILD_NUMBER}"
             
                 }
-                // echo "Rolling back to image number: ${imageNumber}"
+                echo "Rolling back to image number: ${imageNumber}"
             }
         }
     }
