@@ -4,10 +4,6 @@
   <artifactId>calculatorProject</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <properties>
-    <jmeter-maven-plugin.version>3.8.0</jmeter-maven-plugin.version>
-  </properties>
-
  <build>
  <resources>
   <resource>
@@ -61,22 +57,6 @@
                 </execution>
             </executions>
     </plugin>
-    <!-- <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>exec-maven-plugin</artifactId>
-            <version>3.0.0</version>
-            <configuration>
-                <mainClass>PCK1.MainClass</mainClass>
-                <arguments>
-                    <argument>-javaagent:dd-java-agent.jar</argument>
-                    <argument>-Ddd.profiling.enabled=true</argument>
-                    <argument>-Ddd.logs.injection=true</argument>
-                    <argument>-Ddd.service=SimpleCalculator</argument>
-                    <argument>-Ddd.env=calculator_env</argument>
-                    <argument>-Ddd.version=1.0</argument>
-                </arguments>
-            </configuration>
-        </plugin> -->
   </plugins>
   </build>
   
@@ -133,10 +113,5 @@
             <artifactId>jackson-dataformat-xml</artifactId>
             <version>2.17.2</version>
             </dependency>
-        <!-- <dependency>
-          <groupId>com.auth0</groupId>
-          <artifactId>java-jwt</artifactId>
-          <version>4.3.0</version>
-        </dependency> -->
   </dependencies>
 </project>

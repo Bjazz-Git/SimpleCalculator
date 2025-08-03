@@ -57,7 +57,4 @@
       </exclusions>
     </dependency>
   </dependencies>
-  <properties>
-    <jmeter-maven-plugin.version>3.8.0</jmeter-maven-plugin.version>
-  </properties>
 </project>

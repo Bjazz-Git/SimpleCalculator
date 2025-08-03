@@ -1,22 +1,38 @@
 pipeline {
     agent any
     stages{
+        stage('Get User Input'){
+            steps{
+                script{
+                    imageNumber = input(
+                        id: 'Rollback',
+                        message: 'What image do you want to rollback to?:',
+                        parameters: [string(name: 'imageNumber', defaultValue: '0')]
+                    )
+                }
+            }
+        }
+        
         stage('Rollback image'){
             steps{
                 script{
-                def previousImage = currentBuild.previousSuccessfulBuild
-                def previousTag = ''
-                if(previousImage){
-                    previousTag = previousImage.number.toString()
+                    def containerName =" simplecalculator"
+                    
+                    try{
+                        bat "docker stop ${containerName}"
+                        bat "docker rm ${containerName}"
+                    }catch(Exception ex){
+                        echo "container ${containerName} isn't running"
+                    }
+                    
+                    def previousImage = docker.image("braxtonjazz/simplecalculator:${imageNumber}")
+                    previousImage.pull()
+                    previousImage.run("-d --name ${containerName}")
+                    def container = docker.build("braxtonjazz/simplecalculator:${env.BUILD_NUMBER}")
+                    container.push()
+            
                 }
-                else{
-                    error "No previous build"
-                }
-                
-                def imageToDeploy = "braxtonjazz/simplecalculator:${previousTag}"
-                echo "The image that is going to deploy is: ${imageToDeploy}"
-                docker.build(imageToDeploy)
-                }
+                // echo "Rolling back to image number: ${imageNumber}"
             }
         }
     }
