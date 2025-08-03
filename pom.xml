@@ -12,7 +12,7 @@
  </resources>
     <plugins>
 
-<plugin>
+<!-- <plugin>
         <artifactId>maven-shade-plugin</artifactId>
         <version>3.5.1</version>
         <executions>
@@ -30,10 +30,10 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>
+      </plugin> -->
 
 
-	<!-- <plugin>
+	<plugin>
 		<groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-jar-plugin</artifactId>
             <version>3.3.0</version> <configuration>
@@ -44,7 +44,7 @@
 					</manifest>
 				</archive>
 				</configuration>
-	</plugin> -->
+	</plugin>
     <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-jar-plugin</artifactId>
