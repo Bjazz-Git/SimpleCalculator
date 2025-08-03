@@ -69,11 +69,13 @@ public class CalculatorTest {
 		    testNumber3 = -(testNumber3);
 			break;
 		}
-		else if(numToSetNegative == 1 && operationSign != "+"){
+		//removed && operationSign != "+"
+		else if(numToSetNegative == 1){
 			testNumber4 = -(testNumber4);
 			break;
 		}
-		else if(numToSetNegative == 2 && operationSign != "-"){
+		//removed && operationSign != "-"
+		else if(numToSetNegative == 2 ){
 			 testNumber3 = -(testNumber3);
 			 testNumber4 = -(testNumber4);
 			 break;
