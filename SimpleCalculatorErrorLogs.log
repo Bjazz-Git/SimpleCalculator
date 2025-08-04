@@ -1,0 +1,11 @@
+{
+  "timeMillis" : 1754274732102,
+  "thread" : "main",
+  "level" : "ERROR",
+  "loggerName" : "SimpleCalculator",
+  "message" : "Converting 25546496489846 to integer caused the error: For input string: \"25546496489846\"",
+  "endOfBatch" : false,
+  "loggerFqcn" : "org.apache.logging.log4j.spi.AbstractLogger",
+  "threadId" : 1,
+  "threadPriority" : 5
+}
