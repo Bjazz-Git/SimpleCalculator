@@ -1,0 +1,10 @@
+pipeline{
+    agent any
+    stages{
+        stage('Run Jmeter-junit tests'){
+            steps{
+                bat 'C:/Users/Braxt/Tools/Jmeter/apache-jmeter-5.6.3/bin/jmeter.bat -n -t "SimpleCalculator.jmx" -l SimpleCalcTestResults.jtl'
+            } 
+        }
+    }
+}

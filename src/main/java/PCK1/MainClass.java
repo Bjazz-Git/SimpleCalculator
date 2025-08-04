@@ -135,7 +135,11 @@ public class MainClass {
 	//Method that handles addition
 	public static int addNumber(int number1, int number2) {
 		int result = number1 + number2;
-		
+		try{
+			Thread.sleep(10000);
+		}catch(Exception ex){
+
+		}
 		return result;
 	}
 	
