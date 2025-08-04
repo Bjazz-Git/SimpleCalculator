@@ -1,0 +1,27 @@
+<Configuration status="info">
+    <Properties>
+        <Property name="layout">%d [%t] %-5level %logger - %m%n</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${layout}"/>
+        </Console>
+           <File name="LogFile" fileName="SimpleCalculatorLogs.log" append="false">
+            <PatternLayout>
+                <Pattern>%d %p %c{1.} [%t] %m%n \n</Pattern>
+            </PatternLayout>
+        </File>
+        <File name="FileAppender" fileName="SimpleCalculatorErrorLogs.log" append="false">
+            <LevelRangeFilter minLevel="ERROR" maxLevel="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+            <JSONLayout includeTimeMillis="true"/>
+            <!-- <XmlLayout complete="true"/> -->
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="SimpleCalculator" level="info" additivity="false">
+            <AppenderRef ref="LogFile"/>
+            <AppenderRef ref="FileAppender"/>
+            <!-- <AppenderRef ref="Console"/> -->
+        </Logger>
+    </Loggers>
+</Configuration>
